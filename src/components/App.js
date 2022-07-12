@@ -7,15 +7,6 @@ import "../index.css";
 import { validEmailRegex, validPasswordRegex } from "../utils";
 
 const App = () => {
-	// <Form
-	// 	validator={() => {
-	// 	return [
-	// 		{
-	// 			field: 'email',
-	// 			rules: [{}]
-	// 		}
-	// 	]
-	// }} />
 	return (
 		<>
 			<img src={logo} alt="Timescale" />
@@ -32,10 +23,6 @@ const App = () => {
 							rule: validPasswordRegex,
 							message: "Please provide a valid password",
 						},
-						// {
-						// 	field: "terms",
-						// 	rule: {},
-						// },
 					];
 				}}
 			>

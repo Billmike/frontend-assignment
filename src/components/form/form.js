@@ -17,25 +17,30 @@ function Form({ children, onValidate }) {
 
 				if (typeof onValidate === "function") {
 					const validationRules = onValidate();
-					console.log("state", formState);
-					console.log("type of onValidate", validationRules);
-					const createErrors = validationRules.reduce((error, currentRule) => {
+				  validationRules.reduce((error, currentRule) => {
+						const inputWithError = document.getElementsByName(
+							currentRule.field
+						)[0];
+						const div = document.createElement("div");
+						const errorDiv = document.getElementById(
+							`span-${currentRule.field}-error`
+						);
+						errorDiv?.remove();
+
 						if (!currentRule.rule.test(formState[currentRule.field])) {
 							error[currentRule.field] = currentRule.message;
-							const inputWithError = document.getElementsByName(
-								currentRule.field
-							)[0];
-							const span = document.createElement("span");
-							span.className = "custom-error";
-							span.innerHTML = currentRule.message;
-							inputWithError.insertAdjacentElement("afterend", span);
+							div.className = "custom-error";
+							div.id = `span-${currentRule.field}-error`;
+							div.innerText = currentRule.message;
+							inputWithError.insertAdjacentElement("afterend", div);
 							inputWithError.style.borderColor = "#F54545";
+						} else {
+							error[currentRule.field] = "";
+							inputWithError.style.borderColor = "";
 						}
 
 						return error;
 					}, {});
-
-					console.log("the errors", createErrors);
 				}
 			}}
 		>
