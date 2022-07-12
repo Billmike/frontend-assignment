@@ -1,0 +1,14 @@
+.custom-button {
+  height: 2.5rem;
+  background-color: #FDB515;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+}
+
+.custom-button:hover {
+  opacity: 0.6;
+}

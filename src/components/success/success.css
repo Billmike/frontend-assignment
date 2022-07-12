@@ -1,0 +1,23 @@
+.success-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-container h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  line-height: 39px;
+  text-align: center;
+  letter-spacing: -0.01em;
+  color: #141E35;
+  margin-top: 26px;
+  margin-bottom: 0px;
+}
+
+.success-container p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  margin-bottom: 15px;
+}
