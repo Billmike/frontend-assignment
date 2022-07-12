@@ -4,6 +4,7 @@ import { Button } from "./button";
 import { Checkbox } from "./checkbox";
 import { Form } from "./form";
 import "../index.css";
+import { validEmailRegex, validPasswordRegex } from "../utils";
 
 const App = () => {
 	// <Form
@@ -18,7 +19,26 @@ const App = () => {
 	return (
 		<>
 			<img src={logo} alt="Timescale" />
-			<Form>
+			<Form
+				onValidate={() => {
+					return [
+						{
+							field: "email",
+							rule: validEmailRegex,
+							message: "Please provide a valid email address",
+						},
+						{
+							field: "password",
+							rule: validPasswordRegex,
+							message: "Please provide a valid password",
+						},
+						// {
+						// 	field: "terms",
+						// 	rule: {},
+						// },
+					];
+				}}
+			>
 				<div className="form-container">
 					<h2 className="heading">Let’s sign you up for Timescale Cloud</h2>
 					<Input

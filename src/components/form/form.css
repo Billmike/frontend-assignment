@@ -1,0 +1,9 @@
+.custom-error {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  letter-spacing: -0.01em;
+  color: #F54545;
+  margin-bottom: 1rem;
+}
