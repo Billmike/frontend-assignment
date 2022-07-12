@@ -21,7 +21,13 @@ const App = () => {
 						{
 							field: "password",
 							rule: validPasswordRegex,
-							message: "Please provide a valid password",
+							message:
+								"Password must be at least 6 characters long, have 1 number, and a special character ",
+						},
+						{
+							field: "terms",
+							rule: "required",
+							message: "Required",
 						},
 					];
 				}}
@@ -43,7 +49,7 @@ const App = () => {
 						style={{ marginBlock: 10 }}
 					/>
 					<Checkbox
-						label="I agree to the Timecale Cloud Terms of Service"
+						label="I agree to the Timescale Cloud Terms of Service"
 						name="terms"
 					/>
 					<Button style={{ marginBlock: "1.75rem" }} type="submit">
