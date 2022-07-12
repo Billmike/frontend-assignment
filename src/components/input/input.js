@@ -1,11 +1,19 @@
 import React from "react";
 import "./input.css";
 
-function Input({ label, type = "text", name, placeholder = "", ...rest }) {
+function Input({ label, type = "text", name, placeholder = "", id, ...rest }) {
 	return (
 		<div className="custom-input">
-			<label htmlFor="email">{label}</label>
-			<input name={name} placeholder={placeholder} type={type} {...rest} />
+			<label aria-labelledby={id || name} htmlFor={id || name}>
+				{label}
+			</label>
+			<input
+				name={name}
+				id={id || name}
+				placeholder={placeholder}
+				type={type}
+				{...rest}
+			/>
 		</div>
 	);
 }
