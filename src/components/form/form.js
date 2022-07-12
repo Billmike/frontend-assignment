@@ -1,7 +1,7 @@
 import React from "react";
 import "./form.css";
 
-function Form({ children, onValidate }) {
+function Form({ children, onValidate, onSubmit }) {
 	return (
 		<form
 			noValidate
@@ -18,7 +18,7 @@ function Form({ children, onValidate }) {
 
 				if (typeof onValidate === "function") {
 					const validationRules = onValidate();
-					validationRules.reduce((error, currentRule) => {
+					const formErrors = validationRules.reduce((error, currentRule) => {
 						const inputWithError = document.getElementsByName(
 							currentRule.field
 						)[0];
@@ -45,7 +45,7 @@ function Form({ children, onValidate }) {
 									inputWithError?.insertAdjacentElement("afterend", div);
 									customCheckbox.style.borderColor = "red";
 								} else {
-									error[currentRule.field] = "";
+									error[currentRule.field] = null;
 									customCheckbox.style.borderColor = "";
 								}
 							} else {
@@ -57,7 +57,7 @@ function Form({ children, onValidate }) {
 									inputWithError.insertAdjacentElement("afterend", div);
 									inputWithError.style.borderColor = "#F54545";
 								} else {
-									error[currentRule.field] = "";
+									error[currentRule.field] = null;
 									inputWithError.style.borderColor = "";
 								}
 							}
@@ -65,6 +65,16 @@ function Form({ children, onValidate }) {
 
 						return error;
 					}, {});
+					console.log("is form valid", formErrors);
+					const isFormValid =
+						Object.values(formErrors).filter((value) => value !== null)
+							.length === 0;
+
+					if (!isFormValid) {
+						return;
+					}
+
+					onSubmit(formState);
 				}
 			}}
 		>
