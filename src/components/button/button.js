@@ -1,4 +1,5 @@
 import React from "react";
+import PropType from "prop-types";
 import "./button.css";
 
 function getThemeStyle(theme, style) {
@@ -24,5 +25,10 @@ function Button({ children, theme = "gold", style = {}, ...rest }) {
 		</button>
 	);
 }
+
+Button.propTypes = {
+	children: PropType.element.isRequired,
+	theme: PropType.oneOf(["gold", "blue"]),
+};
 
 export default Button;
