@@ -1,0 +1,14 @@
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.custom-checkbox label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  margin-left: 5px;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: -0.01rem;
+  color: #333333;
+}

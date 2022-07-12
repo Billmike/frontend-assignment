@@ -1,0 +1,23 @@
+.custom-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-input input {
+  height: 3rem;
+  padding-inline: 1rem;
+  border-color: #898E9A;
+  border-width: 1px;
+  border-radius: 2px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.custom-input label {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.01rem;
+  color: #141E35;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}

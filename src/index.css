@@ -1,0 +1,32 @@
+input:invalid {
+  border: red;
+}
+
+.form-container {
+  max-width: max-content;
+  background-color: #F7F8F8;
+  padding-block: 5rem;
+  padding-inline: 6.84rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 4rem;
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.43rem;
+  letter-spacing: -0.01rem;
+  max-width: 32.125rem;
+  text-align: center;
+  color: #141E35;
+}
+
+@media only screen and (max-device-width: 780px) {
+  .form-container {
+    padding-inline: 1rem;
+    margin-top: 3rem;
+  }
+}
