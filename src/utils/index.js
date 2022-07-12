@@ -87,3 +87,24 @@ function createErrorMessage({
 		inputElement.style.borderColor = "#F54545";
 	}
 }
+
+export function formValidators() {
+	return [
+		{
+			field: "email",
+			rule: validEmailRegex,
+			message: "Please provide a valid email address",
+		},
+		{
+			field: "password",
+			rule: validPasswordRegex,
+			message:
+				"Password must be at least 6 characters long, have 1 number, and a special character ",
+		},
+		{
+			field: "terms",
+			rule: "required",
+			message: "Required",
+		},
+	];
+}

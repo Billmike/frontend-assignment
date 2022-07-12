@@ -1,12 +1,11 @@
 import logo from "../images/logo.svg";
-import eonCarLogo from "../images/eon-car.svg";
 import { Input } from "./input";
 import { Button } from "./button";
 import { Checkbox } from "./checkbox";
 import { Form } from "./form";
 import { Success } from "./success";
 import "../index.css";
-import { validEmailRegex, validPasswordRegex } from "../utils";
+import { formValidators } from "../utils";
 import React from "react";
 
 const App = () => {
@@ -16,26 +15,7 @@ const App = () => {
 		<>
 			<img src={logo} alt="Timescale" />
 			<Form
-				onValidate={() => {
-					return [
-						{
-							field: "email",
-							rule: validEmailRegex,
-							message: "Please provide a valid email address",
-						},
-						{
-							field: "password",
-							rule: validPasswordRegex,
-							message:
-								"Password must be at least 6 characters long, have 1 number, and a special character ",
-						},
-						{
-							field: "terms",
-							rule: "required",
-							message: "Required",
-						},
-					];
-				}}
+				onValidate={formValidators}
 				onSubmit={(values) => {
 					/**
 					 * This function is not called if there's an error in the form.
